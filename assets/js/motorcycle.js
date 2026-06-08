@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderQuestion(0);
 });
 
+document.addEventListener('dmv:languagechange', () => {
+  if (questions.length) renderQuestion(currentIndex);
+});
+
 function shuffleArray(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -38,7 +42,7 @@ function initUI() {
 /* ── Render ─────────────────────────────────────────────────── */
 function renderQuestion(index) {
   currentIndex = index;
-  const q     = questions[index];
+  const q     = translateQuestion(questions[index], I18N.getLanguage(), 'moto');
   const total = questions.length;
   const pct   = Math.round(((index + 1) / total) * 100);
 
@@ -222,7 +226,8 @@ function showSummary() {
 
   const tbody = document.getElementById('summary-tbody');
   tbody.innerHTML = '';
-  questions.forEach((q, i) => {
+  questions.forEach((rawQ, i) => {
+    const q = translateQuestion(rawQ, I18N.getLanguage(), 'moto');
     const hasAnswer = answers[q.id] !== undefined;
     const isCorrect = hasAnswer && answers[q.id] === q.answer;
     const tr = document.createElement('tr');

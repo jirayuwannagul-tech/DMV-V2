@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-04T22:26:25.815Z",
+  "total_questions": 10,
+  "verified": 0,
+  "errors": [
+    {
+      "batch": 1,
+      "ids": "1–10",
+      "error": "Could not resolve authentication method. Expected either apiKey or authToken to be set. Or for one of the \"X-Api-Key\" or \"Authorization\" headers to be explicitly omitted"
+    }
+  ],
+  "summary": {
+    "correct": 0,
+    "wrong_answer": 0,
+    "outdated": 0,
+    "inaccurate": 0,
+    "needs_review": 0
+  },
+  "token_usage": {
+    "input_tokens": 0,
+    "cache_read_tokens": 0,
+    "output_tokens": 0
+  },
+  "issues": [],
+  "all_results": []
+}

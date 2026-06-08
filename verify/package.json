@@ -1,0 +1,16 @@
+{
+  "name": "dmv-question-verifier",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "verify": "node verify-questions.js",
+    "verify:sample": "node verify-questions.js --limit 20",
+    "import:dry": "node import-official.js --dry",
+    "import": "node import-official.js",
+    "explain": "node add-explanations.js",
+    "explain:sample": "node add-explanations.js --limit 10"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0"
+  }
+}

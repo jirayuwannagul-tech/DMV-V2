@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-start').addEventListener('click', startExam);
 });
 
+document.addEventListener('dmv:languagechange', () => {
+  if (questions.length) renderQuestion(currentIndex);
+});
+
 function initStartScreen() {
   document.getElementById('mock-start-subtitle').innerHTML =
     `จำลองการสอบใบขับขี่มอเตอร์ไซค์จริง สุ่มคำถาม <strong>${TOTAL_QUESTIONS} ข้อ</strong> จากคลัง ${POOL_SIZE} ข้อ<br>
@@ -104,7 +108,7 @@ function initUI() {
 /* ── Render ─────────────────────────────────────────────────── */
 function renderQuestion(index) {
   currentIndex = index;
-  const q     = questions[index];
+  const q     = translateQuestion(questions[index], I18N.getLanguage(), 'moto');
   const total = questions.length;
   const pct   = Math.round(((index + 1) / total) * 100);
 
@@ -269,7 +273,8 @@ function showSummary() {
 
   const tbody = document.getElementById('summary-tbody');
   tbody.innerHTML = '';
-  questions.forEach((q, i) => {
+  questions.forEach((rawQ, i) => {
+    const q = translateQuestion(rawQ, I18N.getLanguage(), 'moto');
     const hasAnswer = answers[q.id] !== undefined;
     const isCorrect = hasAnswer && answers[q.id] === q.answer;
     const tr = document.createElement('tr');

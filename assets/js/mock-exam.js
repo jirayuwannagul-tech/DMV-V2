@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-start').addEventListener('click', startExam);
 });
 
+document.addEventListener('dmv:languagechange', () => {
+  if (questions.length) renderQuestion(currentIndex);
+});
+
 function pickQuestions() {
   const shuffled = shuffleArray(DMV_TESTS);
   questions = shuffled.slice(0, TOTAL_QUESTIONS);
@@ -80,7 +84,7 @@ function initUI() {
 /* ── Render ─────────────────────────────────────────────────── */
 function renderQuestion(index) {
   currentIndex = index;
-  const q     = questions[index];
+  const q     = translateQuestion(questions[index], I18N.getLanguage(), 'car');
   const total = questions.length;
   const pct   = Math.round(((index + 1) / total) * 100);
 
@@ -243,7 +247,8 @@ function showSummary() {
 
   const tbody = document.getElementById('summary-tbody');
   tbody.innerHTML = '';
-  questions.forEach((q, i) => {
+  questions.forEach((rawQ, i) => {
+    const q = translateQuestion(rawQ, I18N.getLanguage(), 'car');
     const hasAnswer = answers[q.id] !== undefined;
     const isCorrect = hasAnswer && answers[q.id] === q.answer;
     const tr = document.createElement('tr');

@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderQuestion(0);
 });
 
+document.addEventListener('dmv:languagechange', () => {
+  if (questions.length) renderQuestion(currentIndex);
+});
+
 /* ── UI init ────────────────────────────────────────────────── */
 function initUI() {
   // header labels
@@ -61,7 +65,7 @@ function initUI() {
 /* ── Render question ────────────────────────────────────────── */
 function renderQuestion(index) {
   currentIndex = index;
-  const q = questions[index];
+  const q = translateQuestion(questions[index], I18N.getLanguage(), 'moto');
   const total = questions.length;
 
   // progress bar & label
@@ -301,7 +305,8 @@ function showSummary() {
   // build detail table
   const tbody = document.getElementById('summary-tbody');
   tbody.innerHTML = '';
-  questions.forEach((q, i) => {
+  questions.forEach((rawQ, i) => {
+    const q = translateQuestion(rawQ, I18N.getLanguage(), 'moto');
     const tr = document.createElement('tr');
     const hasAnswer = answers[q.id] !== undefined;
     const isCorrect = hasAnswer && answers[q.id] === q.answer;
