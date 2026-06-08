@@ -235,6 +235,48 @@ const I18N_DICT = {
     th: 'ปิดหน้าต่างสนับสนุน', en: 'Close support dialog', ja: '応援ウィンドウを閉じる', zh: '关闭支持窗口',
     es: 'Cerrar ventana de apoyo', vi: 'Đóng cửa sổ ủng hộ', fr: 'Fermer la fenêtre de soutien', de: 'Unterstützungsfenster schließen',
   },
+
+  // ── ชุดข้อสอบมอเตอร์ไซค์ (motorcycle.html) ──────────────────
+  'home.banner.moto.badge': {
+    th: 'มอเตอร์ไซค์', en: 'Motorcycle', ja: 'バイク', zh: '摩托车',
+    es: 'Motocicleta', vi: 'Xe máy', fr: 'Moto', de: 'Motorrad',
+  },
+  'home.banner.moto.title': {
+    th: 'ข้อสอบใบขับขี่มอเตอร์ไซค์', en: 'Motorcycle license exam',
+    ja: 'バイク運転免許試験', zh: '摩托车驾照考试',
+    es: 'Examen de licencia de motocicleta', vi: 'Đề thi bằng lái xe máy',
+    fr: 'Examen du permis moto', de: 'Motorrad-Führerscheinprüfung',
+  },
+  'home.banner.moto.desc': {
+    th: 'ฝึกซ้อมข้อสอบใบขับขี่มอเตอร์ไซค์ (Class M1/M2) อ้างอิงจาก California Motorcycle Handbook',
+    en: 'Practice for the California motorcycle license exam (Class M1/M2), based on the California Motorcycle Handbook',
+    ja: 'カリフォルニア州バイク免許試験（M1/M2クラス）対策。California Motorcycle Handbook を参考に作成',
+    zh: '加州摩托车驾照考试练习（M1/M2类），内容参考 California Motorcycle Handbook',
+    es: 'Practica para el examen de licencia de motocicleta de California (Clase M1/M2), basado en el California Motorcycle Handbook',
+    vi: 'Luyện thi bằng lái xe máy California (Hạng M1/M2), dựa trên California Motorcycle Handbook',
+    fr: 'Entraînez-vous à l\'examen du permis moto de Californie (catégorie M1/M2), basé sur le California Motorcycle Handbook',
+    de: 'Übe für die kalifornische Motorrad-Führerscheinprüfung (Klasse M1/M2), basierend auf dem California Motorcycle Handbook',
+  },
+  'home.banner.moto.cta': {
+    th: 'เริ่มฝึกซ้อม', en: 'Start practicing', ja: '練習を始める', zh: '开始练习',
+    es: 'Comenzar a practicar', vi: 'Bắt đầu luyện tập', fr: 'Commencer l\'entraînement', de: 'Übung starten',
+  },
+  'moto.title': {
+    th: 'DMV — ฝึกซ้อมข้อสอบใบขับขี่มอเตอร์ไซค์', en: 'DMV — Motorcycle License Exam Practice',
+    ja: 'DMV — バイク免許試験対策', zh: 'DMV — 摩托车驾照考试练习',
+    es: 'DMV — Práctica del examen de licencia de motocicleta', vi: 'DMV — Luyện thi bằng lái xe máy',
+    fr: 'DMV — Entraînement à l\'examen du permis moto', de: 'DMV — Übung zur Motorrad-Führerscheinprüfung',
+  },
+  'moto.label': {
+    th: 'มอเตอร์ไซค์', en: 'Motorcycle', ja: 'バイク', zh: '摩托车',
+    es: 'Motocicleta', vi: 'Xe máy', fr: 'Moto', de: 'Motorrad',
+  },
+  'moto.summary.title': {
+    th: 'สรุปผลการฝึกซ้อม — ใบขับขี่มอเตอร์ไซค์', en: 'Practice summary — Motorcycle license',
+    ja: '練習結果サマリー — バイク免許', zh: '练习总结 — 摩托车驾照',
+    es: 'Resumen de práctica — Licencia de motocicleta', vi: 'Tổng kết luyện tập — Bằng lái xe máy',
+    fr: 'Résumé de l\'entraînement — Permis moto', de: 'Übungsergebnis — Motorrad-Führerschein',
+  },
 };
 
 const I18N = (function () {
