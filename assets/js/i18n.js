@@ -261,6 +261,14 @@ const I18N_DICT = {
     th: 'เริ่มฝึกซ้อม', en: 'Start practicing', ja: '練習を始める', zh: '开始练习',
     es: 'Comenzar a practicar', vi: 'Bắt đầu luyện tập', fr: 'Commencer l\'entraînement', de: 'Übung starten',
   },
+  'home.banner.moto.cta.exam': {
+    th: 'ทำชุดข้อสอบ', en: 'Take a test set', ja: 'セット問題を解く', zh: '做题组练习',
+    es: 'Hacer un examen por set', vi: 'Làm bộ đề thi', fr: 'Faire une série de tests', de: 'Testreihe machen',
+  },
+  'home.banner.moto.cta.mock': {
+    th: 'สอบจำลอง', en: 'Mock exam', ja: '模擬試験', zh: '模拟考试',
+    es: 'Examen simulado', vi: 'Thi thử', fr: 'Examen blanc', de: 'Probeprüfung',
+  },
   'moto.title': {
     th: 'DMV — ฝึกซ้อมข้อสอบใบขับขี่มอเตอร์ไซค์', en: 'DMV — Motorcycle License Exam Practice',
     ja: 'DMV — バイク免許試験対策', zh: 'DMV — 摩托车驾照考试练习',
