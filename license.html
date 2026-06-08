@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMV Practice — ประเภทใบขับขี่</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="logo-seal" aria-hidden="true"><span>CA<br>DMV</span></div>
+    <div class="header-text">
+      <span class="header-title">Department of Motor Vehicles</span>
+      <span class="header-sub" data-i18n="header.sub">State of California — ซ้อมสอบใบขับขี่</span>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN ══════════════════════════════════════════════════ -->
+  <main class="page-wrapper" role="main">
+
+    <!-- breadcrumb -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html" class="breadcrumb-link">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M2 8l6-6 6 6M4 6v7h3v-4h2v4h3V6" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        หน้าหลัก
+      </a>
+      <span class="breadcrumb-sep">›</span>
+      <span id="breadcrumb-current">ประเภทใบขับขี่</span>
+    </nav>
+
+    <!-- license header -->
+    <div class="license-hub-header" id="hub-header">
+      <div class="license-hub-icon" id="hub-icon">🚗</div>
+      <div>
+        <h1 class="license-hub-title" id="hub-title">Class C — รถยนต์นั่งส่วนบุคคล</h1>
+        <p class="license-hub-desc" id="hub-desc">รถยนต์ รถตู้ รถกระบะ ≤ 26,000 ปอนด์</p>
+      </div>
+    </div>
+
+    <!-- 4 mode cards -->
+    <div class="mode-grid" id="mode-grid" role="list">
+      <!-- injected by license.js -->
+    </div>
+
+    <a href="index.html" class="btn btn-outline" style="display:inline-flex; margin-top:8px;">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M10 3L6 8l4 5" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      กลับเลือกประเภทใบขับขี่
+    </a>
+
+  </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo" data-i18n="footer.text">
+    California DMV Written Test Practice — ภาษาไทย &nbsp;|&nbsp; ข้อมูลอ้างอิงจาก California Driver Handbook
+  </footer>
+
+  <script src="assets/js/license-data.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const typeId = params.get('type') || 'c';
+      const lic = LICENSE_TYPES.find(l => l.id === typeId) || LICENSE_TYPES[0];
+
+      // update header
+      document.getElementById('hub-icon').textContent    = lic.icon;
+      document.getElementById('hub-title').textContent   = lic.name;
+      document.getElementById('hub-desc').textContent    = lic.desc;
+      document.getElementById('breadcrumb-current').textContent = lic.code;
+      document.title = `DMV Practice — ${lic.code}`;
+
+      // color accent
+      document.getElementById('hub-header').style.setProperty('--hub-color', lic.color);
+
+      const MODE_ICONS = {
+        handbook: '📖',
+        practice: '🎯',
+        exam:     '📝',
+        mock:     '⏱',
+      };
+      const MODE_ORDER = ['handbook', 'practice', 'exam', 'mock'];
+
+      const grid = document.getElementById('mode-grid');
+      MODE_ORDER.forEach(key => {
+        const m = lic.modes[key];
+        const available = m.available && m.url;
+
+        const card = document.createElement(available ? 'a' : 'div');
+        card.className = 'mode-card' + (available ? ' mode-available' : ' mode-unavailable');
+        if (available) card.href = m.url;
+        card.setAttribute('role', 'listitem');
+
+        card.innerHTML = `
+          <div class="mode-card-icon">${MODE_ICONS[key]}</div>
+          <div class="mode-card-title">${m.label}</div>
+          <div class="mode-card-desc">${m.desc}</div>
+          <span class="mode-card-badge ${available ? 'badge-available' : 'badge-soon'}">
+            ${available ? 'พร้อมใช้งาน' : 'เร็ว ๆ นี้'}
+          </span>
+        `;
+        grid.appendChild(card);
+      });
+    })();
+  </script>
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fc0050c87f024d8ab27a82caa3b9b9db"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

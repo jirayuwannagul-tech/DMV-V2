@@ -3,65 +3,43 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderTestGrid();
+  renderLicenseGrid();
   initSupportModal();
 });
 
-function renderTestGrid() {
-  const grid = document.getElementById('test-grid');
+function renderLicenseGrid() {
+  const grid = document.getElementById('license-grid');
   if (!grid) return;
 
-  TESTS_META.forEach(meta => {
-    const card = createTestCard(meta);
+  LICENSE_TYPES.forEach(lic => {
+    const anyAvailable = Object.values(lic.modes).some(m => m.available && m.url);
+    const card = document.createElement('a');
+    card.className = 'license-card';
+    card.href = `license.html?type=${lic.id}`;
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('aria-label', lic.name);
+    card.style.setProperty('--card-color', lic.color);
+
+    card.innerHTML = `
+      <div class="license-card-top"></div>
+      <div class="license-card-body">
+        <div class="license-card-icon">${lic.icon}</div>
+        <div class="license-card-code">${lic.code}</div>
+        <div class="license-card-name">${lic.name.replace(/^[^—]+— /, '')}</div>
+        <div class="license-card-desc">${lic.desc}</div>
+        <div class="license-card-footer">
+          <span class="license-card-status ${anyAvailable ? 'status-available' : 'status-soon'}">
+            ${anyAvailable ? 'พร้อมใช้งาน' : 'เร็ว ๆ นี้'}
+          </span>
+          <svg class="license-card-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    `;
     grid.appendChild(card);
   });
-}
-
-function createTestCard(meta) {
-  const card = document.createElement('div');
-  card.className = 'test-card';
-  card.setAttribute('role', 'button');
-  card.setAttribute('tabindex', '0');
-  card.setAttribute('aria-label', `เริ่มสอบ ${meta.title}`);
-
-  card.innerHTML = `
-    <div class="test-card-number">ชุดข้อสอบ</div>
-    <div class="test-card-title">${meta.title}</div>
-    <div class="test-card-meta">
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M8 4.5v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      ${meta.count} ข้อ
-    </div>
-    <button class="test-card-btn" data-test="${meta.number}" aria-label="เริ่มสอบชุดที่ ${meta.number}">
-      เริ่มสอบ
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-  `;
-
-  // click on button
-  card.querySelector('.test-card-btn').addEventListener('click', (e) => {
-    e.stopPropagation();
-    navigateToExam(meta.number);
-  });
-
-  // click / keyboard on card
-  card.addEventListener('click', () => navigateToExam(meta.number));
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      navigateToExam(meta.number);
-    }
-  });
-
-  return card;
-}
-
-function navigateToExam(testNumber) {
-  window.location.href = `exam.html?test=${testNumber}`;
 }
 
 function initSupportModal() {
