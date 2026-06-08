@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ซ้อมสอบใบขับขี่ California DMV ภาษาไทย 190 ข้อ แบ่งเป็น 19 ชุด ชุดละ 10 ข้อ" />
-  <title>DMV Practice Test — ซ้อมสอบใบขับขี่ภาษาไทย</title>
+  <meta name="description" content="ซ้อมสอบใบขับขี่ California DMV หลายภาษา 190 ข้อ แบ่งเป็น 19 ชุด ชุดละ 10 ข้อ" />
+  <title data-i18n="home.title">DMV Practice Test — ซ้อมสอบใบขับขี่หลายภาษา</title>
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
     </div>
     <div class="header-text">
       <span class="header-title">Department of Motor Vehicles</span>
-      <span class="header-sub">State of California — ชุดข้อสอบภาษาไทย</span>
+      <span class="header-sub" data-i18n="header.sub">State of California — ซ้อมสอบใบขับขี่</span>
     </div>
   </header>
 
@@ -24,8 +24,8 @@
   <main class="page-wrapper" role="main">
 
     <section class="home-hero" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">ซ้อมสอบใบขับขี่ California</h1>
-      <p>ข้อสอบภาษาไทย จำนวน 190 ข้อ แบ่งเป็น 19 ชุด ชุดละ 10 ข้อ<br>
+      <h1 id="hero-heading" data-i18n="home.hero.title">ซ้อมสอบใบขับขี่ California</h1>
+      <p data-i18n-html="home.hero.desc">ข้อสอบภาษาไทย จำนวน 190 ข้อ แบ่งเป็น 19 ชุด ชุดละ 10 ข้อ<br>
          เลือกชุดที่ต้องการด้านล่าง แล้วกด <strong>เริ่มสอบ</strong></p>
     </section>
 
@@ -34,51 +34,52 @@
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 3v4.5l3 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <strong>190 ข้อ</strong> รวมทั้งหมด
+        <strong>190</strong> <span data-i18n="home.info.total">ข้อ รวมทั้งหมด</span>
       </div>
       <div class="info-chip" role="listitem">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <rect x="2" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
           <path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <strong>19 ชุด</strong> ๆ ละ 10 ข้อ
+        <strong>19</strong> <span data-i18n="home.info.sets">ชุด ๆ ละ 10 ข้อ</span>
       </div>
       <div class="info-chip" role="listitem">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M2 13l4-4 3 3 5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        ข้อสอบ <strong>เกณฑ์ผ่าน 83%</strong>
+        <span data-i18n="home.info.pass">เกณฑ์ผ่าน 83%</span>
       </div>
       <button class="support-chip" type="button" id="support-open">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M8 13s-5-3.1-5-7.1A2.9 2.9 0 0 1 8 3.8a2.9 2.9 0 0 1 5 2.1C13 9.9 8 13 8 13z"
                 stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
         </svg>
-        สนับสนุนผู้พัฒนา
+        <span data-i18n="home.support.chip">สนับสนุนผู้พัฒนา</span>
       </button>
     </div>
 
     <div class="notice-box" role="note">
-      <strong>คำแนะนำ:</strong> โปรดศึกษา
+      <strong data-i18n="home.notice.label">คำแนะนำ:</strong>
+      <span data-i18n-html="home.notice.text">โปรดศึกษา
       <em>คู่มือผู้ขับขี่ยานยนต์ของรัฐแคลิฟอร์เนีย</em> ก่อนทำการทดสอบ
-      แต่ละคำถามจะมีคำตอบให้เลือกสามข้อ เลือกคำตอบที่ถูกต้องที่สุดเพียงหนึ่งข้อ
+      แต่ละคำถามจะมีคำตอบให้เลือกสามข้อ เลือกคำตอบที่ถูกต้องที่สุดเพียงหนึ่งข้อ</span>
     </div>
 
     <div class="reference-box" role="note">
-      เนื้อหาและแนวข้อสอบอ้างอิงจาก
+      <span data-i18n="home.reference.text">เนื้อหาและแนวข้อสอบอ้างอิงจาก</span>
       <a href="https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank" rel="noopener noreferrer" data-i18n="home.reference.link">
         California DMV Driver Handbook
       </a>
-      เพื่อใช้สำหรับฝึกทำข้อสอบเท่านั้น
+      <span data-i18n="home.reference.suffix">เพื่อใช้สำหรับฝึกทำข้อสอบเท่านั้น</span>
     </div>
 
     <!-- Handbook banner -->
     <div class="mock-exam-banner" role="complementary" aria-label="คู่มือผู้ขับขี่" style="background:linear-gradient(135deg,#065f46,#059669);">
       <div>
-        <div class="mock-exam-badge" style="background:rgba(255,255,255,.2);">คู่มือ</div>
-        <h2 class="mock-exam-banner-title">คู่มือผู้ขับขี่ California ภาษาไทย</h2>
-        <p class="mock-exam-banner-desc">
+        <div class="mock-exam-badge" style="background:rgba(255,255,255,.2);" data-i18n="home.banner.handbook.badge">คู่มือ</div>
+        <h2 class="mock-exam-banner-title" data-i18n="home.banner.handbook.title">คู่มือผู้ขับขี่ California</h2>
+        <p class="mock-exam-banner-desc" data-i18n="home.banner.handbook.desc">
           แปลครบ 9 บทจาก California Quick Reference Driver's Handbook (DL 600X) อ่านก่อนสอบ
         </p>
       </div>
@@ -86,33 +87,33 @@
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M2 3h12v10H2zM2 6h12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
         </svg>
-        อ่านคู่มือ
+        <span data-i18n="home.banner.handbook.cta">อ่านคู่มือ</span>
       </a>
     </div>
 
     <!-- Practice all banner -->
     <div class="mock-exam-banner" role="complementary" aria-label="ฝึกซ้อม 190 ข้อ" style="background:linear-gradient(135deg,#7c3aed,#a855f7);">
       <div>
-        <div class="mock-exam-badge" style="background:rgba(255,255,255,.2);">ฝึกซ้อม</div>
-        <h2 class="mock-exam-banner-title">ฝึกซ้อม 190 ข้อ พร้อมเฉลยทันที</h2>
-        <p class="mock-exam-banner-desc">
-          สุ่มคำถามทั้ง 190 ข้อ — ตอบผิดเห็นเฉลยทันที ไม่มีจำกัดเวลา
+        <div class="mock-exam-badge" style="background:rgba(255,255,255,.2);" data-i18n="home.banner.practice.badge">ฝึกซ้อม</div>
+        <h2 class="mock-exam-banner-title" data-i18n="home.banner.practice.title">ฝึกซ้อมข้อสอบเต็มชุด พร้อมเฉลยทันที</h2>
+        <p class="mock-exam-banner-desc" data-i18n="home.banner.practice.desc">
+          สุ่มคำถามจากคลังข้อสอบทั้งหมด — ตอบผิดเห็นเฉลยทันที ไม่มีจำกัดเวลา
         </p>
       </div>
       <a href="practice.html" class="btn-white">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M4 3l8 5-8 5V3z" fill="currentColor"/>
         </svg>
-        เริ่มฝึกซ้อม
+        <span data-i18n="home.banner.practice.cta">เริ่มฝึกซ้อม</span>
       </a>
     </div>
 
     <!-- Mock exam banner -->
     <div class="mock-exam-banner" role="complementary" aria-label="สอบจำลอง">
       <div>
-        <div class="mock-exam-badge">สอบจำลอง</div>
-        <h2 class="mock-exam-banner-title">จำลองการสอบจริง 46 ข้อ</h2>
-        <p class="mock-exam-banner-desc">
+        <div class="mock-exam-badge" data-i18n="home.banner.mock.badge">สอบจำลอง</div>
+        <h2 class="mock-exam-banner-title" data-i18n="home.banner.mock.title">จำลองการสอบจริง 46 ข้อ</h2>
+        <p class="mock-exam-banner-desc" data-i18n="home.banner.mock.desc">
           สุ่มคำถาม 46 ข้อจากคลัง 190 ข้อ — ผ่านเมื่อตอบถูกอย่างน้อย 38 ข้อ (83%) มีเวลา 40 นาที
         </p>
       </div>
@@ -120,11 +121,11 @@
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <path d="M4 3l8 5-8 5V3z" fill="currentColor"/>
         </svg>
-        เริ่มสอบจำลอง
+        <span data-i18n="home.banner.mock.cta">เริ่มสอบจำลอง</span>
       </a>
     </div>
 
-    <p class="test-grid-title" id="grid-heading">เลือกชุดข้อสอบ</p>
+    <p class="test-grid-title" id="grid-heading" data-i18n="home.grid.title">เลือกชุดข้อสอบ</p>
 
     <div class="test-grid" id="test-grid" role="list" aria-labelledby="grid-heading">
       <!-- cards injected by home.js -->
@@ -135,29 +136,30 @@
   <div class="support-modal" id="support-modal" aria-hidden="true">
     <div class="support-backdrop" data-support-close></div>
     <section class="support-dialog" role="dialog" aria-modal="true" aria-labelledby="support-title">
-      <button class="support-close" type="button" data-support-close aria-label="ปิดหน้าต่างสนับสนุน">
+      <button class="support-close" type="button" data-support-close data-i18n-attr="aria-label:home.support.close" aria-label="ปิดหน้าต่างสนับสนุน">
         ×
       </button>
-      <h2 id="support-title">สนับสนุนผู้พัฒนา</h2>
-      <p>
-        เว็บไซต์นี้จัดทำขึ้นเพื่อช่วยผู้สอบใบขับขี่ภาษาไทย
+      <h2 id="support-title" data-i18n="home.support.modal.title">สนับสนุนผู้พัฒนา</h2>
+      <p data-i18n="home.support.modal.text">
+        เว็บไซต์นี้จัดทำขึ้นเพื่อช่วยผู้สอบใบขับขี่ในหลายภาษา
         หากมีประโยชน์ สามารถสนับสนุนค่าเว็บไซต์ได้ตามสมัครใจ
       </p>
       <img src="assets/img/support-zelle-qr.jpg"
            alt="QR สำหรับสนับสนุนผ่าน Zelle ชื่อ Jirayu Wannagul"
            class="support-qr">
-      <p class="support-note">
+      <p class="support-note" data-i18n="home.support.modal.note">
         ไม่ใช่เว็บไซต์ทางการของ California DMV และไม่มีการบังคับชำระเงินเพื่อใช้งาน
       </p>
     </section>
   </div>
 
   <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer" role="contentinfo" data-i18n="footer.text">
     California DMV Written Test Practice — ภาษาไทย &nbsp;|&nbsp; ข้อมูลอ้างอิงจาก California Driver Handbook
   </footer>
 
   <script src="assets/js/data.js"></script>
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/home.js"></script>
 <!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fc0050c87f024d8ab27a82caa3b9b9db"}'></script><!-- End Cloudflare Web Analytics -->
